@@ -1,21 +1,21 @@
-                                                        #  https://www.programiz.com/dsa/graph-dfs
+                                                        #  https://www.educative.io/edpresso/how-to-implement-depth-first-search-in-python
 
-def dfs(graph, start, visited=None):
-    if visited is None:
-        visited = set()
-    visited.add(start)
+graph = {
+    'A' : ['B','C'],
+    'B' : ['D', 'E'],
+    'C' : ['F'],
+    'D' : [],
+    'E' : ['F'],
+    'F' : []
+}
 
-    print(start)
+visited = set()
 
-    for next in graph[start] - visited:
-        dfs(graph, next, visited)
-    return visited
+def dfs(visited, graph, node):
+    if node not in visited:
+        print (node)
+        visited.add(node)
+        for neighbour in graph[node]:
+            dfs(visited, graph, neighbour)
 
-
-graph = {'0': set(['1', '2']),
-         '1': set(['0', '3', '4']),
-         '2': set(['0']),
-         '3': set(['1']),
-         '4': set(['2', '3'])}
-
-dfs(graph, '0')
+dfs(visited, graph, 'A')
