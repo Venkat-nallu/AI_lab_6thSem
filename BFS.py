@@ -1,3 +1,6 @@
+                                  # https://www.educative.io/edpresso/how-to-implement-a-breadth-first-search-in-python
+
+
 graph = {
   'A' : ['B','C'],
   'B' : ['D', 'E'],
@@ -7,8 +10,8 @@ graph = {
   'F' : []
 }
 
-visited = [] # List to keep track of visited nodes.
-queue = []     #Initialize a queue
+visited = []
+queue = [] 
 
 def bfs(visited, graph, node):
   visited.append(node)
@@ -23,5 +26,5 @@ def bfs(visited, graph, node):
         visited.append(neighbour)
         queue.append(neighbour)
 
-# Driver Code
+
 bfs(visited, graph, 'A')
